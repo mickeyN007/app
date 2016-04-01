@@ -5,8 +5,6 @@ angular.module('socially').directive('report', function () {
     controllerAs: 'report',
     controller: function ($scope, $reactive) {
       $reactive(this).attach($scope);
-
-
     }
   }
 });

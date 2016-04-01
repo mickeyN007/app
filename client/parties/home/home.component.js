@@ -5,17 +5,18 @@ angular.module('socially').directive('home', function(){
     controllerAs: 'home',
     controller: function ($scope, $reactive) {
       $reactive(this).attach($scope);
-	this.newParty = {};
-       	//var drA = Parties.findOne({username: "master"});
-	//console.log(Parties.findOne({username: "master"}));
-	this.sign = () => {
-	  if (Parties.findOne({username: "master"}).pass == this.newParty.pass)
-		window.location.href="/info";
-	  else {alert("Wrong Password!");window.location.href="/home";}
-        };
-        this.clickMe = () => {
-          document.getElementById("sign").style.display="inline";
-        };
+      this.newParty = {};
+      //var drA = Parties.findOne({username: "master"});
+      //console.log(Parties.findOne({username: "master"}));
+      this.sign = () => {
+        const { pass } = Meteor.settings.public;
+        if (pass == this.newParty.pass)
+        window.location.href="/info";
+        else {alert("Wrong Password!");window.location.href="/home";}
+      };
+      this.clickMe = () => {
+        document.getElementById("sign").style.display="inline";
+      };
+    }
   }
-}
 });

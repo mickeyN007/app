@@ -5,7 +5,7 @@ function onReady() {
     strictDi: true
   });
 }
- 
+
 if (Meteor.isCordova)
   angular.element(document).on("deviceready", onReady);
 else
