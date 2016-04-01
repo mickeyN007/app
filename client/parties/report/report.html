@@ -1,0 +1,70 @@
+<script src="/canvasjs.min.js"></script>
+<div>
+<div id="chartContainer" style="height: 300px; width: 100%;">
+</div>
+<button id="clickme" hidden="false" onclick="display()">Y</button>
+
+<br><br>
+<center>
+
+<a href="/home">
+<button>
+Sign In Page
+</button>
+</a>
+
+<a href="/info">
+<button>
+Waitlist
+</button>
+</a>
+
+<a href="/list">
+<button>
+Detailed Report
+</button>
+</a>
+
+</center>
+</div>
+<script>
+
+  function display(){
+          var a = Parties.find({pname: "Dr. Mangum"}).count();
+          var b = Parties.find({pname: "Dr. Johnson"}).count();
+          var c = Parties.find({pname: "Dr. Bullard"}).count();
+          //var d = Parties.find({pname: "Mr. Snowden"}).count();
+          var d = Parties.find({pname: "Mr. Mouton"}).count();
+
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+                title:{
+                        text: "Report of total students by professor visited"
+                },
+                legend: {
+                        maxWidth: 350,
+                        itemWidth: 120
+},
+                data: [
+                {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                                { y: a, indexLabel: "Dr. Mangum"},
+                               { y: b, indexLabel: "Dr. Johnson"},
+                               { y: c, indexLabel: "Dr. Bullard"},
+                              // { y: d, indexLabel: "Mr. Snowden"},
+                                { y: d, indexLabel: "Mr. Mouton"}
+                       ]
+                }
+                ]
+        });
+        setTimeout(chart.render(),5000);
+        };
+
+        //document.getElementById("clickme").click();
+       setTimeout(display(),5000);
+</script>
+
+

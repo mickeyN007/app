@@ -1,0 +1,29 @@
+<div style="text-align: center;">
+
+<div class="pop">
+  <a href="/home">
+     <span style="float: right;"><h1>X</h1></span>
+  </a>
+
+  <img id="image" class="img">
+
+
+  <hr>
+
+  <form class="detail">
+  	<h2><label>Name: </label>
+  	<input type="text" ng-model="addDetails.newParty.name" /><br>
+	<br>
+	<label>Catgeory:</label>
+         <input type="radio" id="catg" name="catg"
+          value="Student" checked> Student
+         <input type="radio" id="catg2" name="catg"
+          value="Visitor"> Visitor <br><br>
+  	<label>Reason:</label>
+  	<textarea rows="4" cols="50" ng-model="addDetails.newParty.descrition"></textarea><br>
+  	<center><a href="/home"><button ng-click="addDetails.addParty()">Sign In</button></a></center>
+	</h2>
+  </form>
+</div>
+</div>
+<div class="bg"></div>

@@ -1,0 +1,123 @@
+<span id="verify" style="position: absolute; float: right; top: 0px; right: 25px;">
+<span ng-click="infoDetails.toggle()" style="background-color: grey; color: white;">
+    Verify Password <br/></span>
+   <span id="in" style="display: none;">
+    <span>Current Password:</span><br />
+     <span>
+       <input id="cpass" type="password" required ng-model="infoDetails.newParty.pass">
+     </span>
+     <span>
+       <img style="display: none; width: 10px; height: 10px;" id="status" src="/x.jpeg"><br/>
+     </span>   
+     <center>
+       <span>
+          <button ng-click="infoDetails.sign()">
+		Verify Password
+	  </button>
+	</span>
+      </center>
+     </span>
+</span><br/><br/>
+
+<span id="change" style=" position: absolute; float: right; display: none; top: 0px; right: 25px;">
+<span  ng-click="infoDetails.toggle()" style="background-color: grey; color: white;">
+   Change Password <br/></span>
+    <span>New Password:</span><br />
+     <span>
+       <input id="cpassa" type="password" required ng-model="infoDetails.newParty.pass">
+     </span><br /><br />
+     <span>Confirm Password:</span><br />
+     <span>
+       <input id="cpassb" type="password" required ng-model="infoDetails.newParty.passb">
+     </span>
+     <span>
+       <img style="display: none; width: 10px; height: 10px;" id="statusb" src="/x.jpeg"><br/>
+     </span>
+     <center>
+       <span>
+          <button ng-click="infoDetails.signb()">
+                Change Password
+          </button>
+	  <button ng-click="infoDetails.cancel()">
+              Cancel
+          </button>
+        </span>
+      </center>
+</span><br/><br/>
+
+<center>
+<h2> Wait list </h2>
+</center>
+
+<hr>
+<div class="ttt">
+
+<table class="f">
+<th><center><span class="f">Dr. Bullard</span></center></th>
+<tb>
+<tr><td></td></tr>
+<tr ng-repeat="x in infoDetails.drC">
+<td>{{x.name}}
+<button ng-click="infoDetails.removeParty(x)">X</button></td>
+</tr>
+</tb>
+</table>
+
+<table class="f">
+<th><center><span class="f">Dr. Johnson</span></center></th>
+<tb>
+<tr><td></td></tr>
+<tr ng-repeat="x in infoDetails.drB">
+<td>{{x.name}} 
+<button ng-click="infoDetails.removeParty(x)">X</button></td>
+</tr>
+</tb>
+</table>
+
+<table class="f">
+<th><center><span class="f">Dr. Mangum</span></center></th>
+<tb>
+<tr><td></td></tr>
+<tr ng-repeat="x in infoDetails.drA">
+<td>{{x.name}}
+<button ng-click="infoDetails.removeParty(x)">X</button></td>
+</tr>
+</tb>
+</table>
+
+
+<table class="f">
+<th><center><span class="f">Mr. Mouton</span></center></th>
+<tb>
+<tr><td></td></tr>
+<tr ng-repeat="x in infoDetails.drE">
+<td>{{x.name}}
+<button ng-click="infoDetails.removeParty(x)">X</button></td>
+</tr>
+</tb>
+</table>
+
+</div>
+
+<br>
+<br>
+<center>
+<a href="/home">
+<button>
+Sign In Page
+</button>
+</a>
+
+<a href="/report">
+<button>
+Report Page
+</button>
+</a>
+
+<a href="/list">
+<button>
+Detailed Report
+</button>
+</a>
+
+</center>

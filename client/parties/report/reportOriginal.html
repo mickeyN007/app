@@ -1,0 +1,68 @@
+<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+
+    window.onload = function () {
+          //var a = Parties.find({pname: "Dr. Mangum"}).count();
+          //var b = Parties.find({pname: "Dr. Johnson"}).count();
+          //var c = Parties.find({pname: "Dr. Bullard"}).count();
+          //var d = Parties.find({pname: "Mr. Snowden"}).count();
+          //var d = Parties.find({pname: "Mr. Mouton"}).count();
+
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+                title:{
+                        text: "Report of total students by professor visited"
+                },
+                legend: {
+                        maxWidth: 350,
+                        itemWidth: 120
+},
+                data: [
+                {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                                { y: 1, indexLabel: "Dr. Mangum"},
+                               { y: 2, indexLabel: "Dr. Johnson"},
+                               { y: 3, indexLabel: "Dr. Bullard"},
+                              // { y: d, indexLabel: "Mr. Snowden"},
+                                { y: 4, indexLabel: "Mr. Mouton"}
+                       ]
+                }
+                ]
+        });
+        chart.render();
+}
+
+//document.getElementById("clickme").click();
+</script>
+
+<div>
+<div id="chartContainer" style="height: 300px; width: 100%;">
+</div>
+<button id="clickme" hidden="false" onclick="display()">Y</button>
+
+<br><br>
+<center>
+
+<a href="/home">
+<button>
+Sign In Page
+</button>
+</a>
+
+<a href="/info">
+<button>
+Waitlist
+</button>
+</a>
+
+<a href="/list">
+<button>
+Detailed Report
+</button>
+</a>
+
+</center>
+</div>

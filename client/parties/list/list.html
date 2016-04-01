@@ -1,0 +1,50 @@
+<div>
+<table id="t01">
+  <tr>
+    <th><h1>Name</h1></th>
+    <th><h1>Reason for visit</h1></th>
+    <th><h1>Professor Visited</h1></th>
+    <th><h1>Category</h1></th>
+  </tr>
+  <tr ng-repeat="x in list.parties">
+     <td>
+       {{x.name}}
+     </td>
+
+     <td>
+        {{x.descrition}}
+     </td>
+
+     <td>
+        {{x.pname}}
+     </td>
+
+     <td>
+        {{x.category}}
+     </td>
+
+  </tr>
+</table>
+
+<br><br>
+<center>
+
+<a href="/home">
+<button>
+Sign In Page
+</button>
+</a>
+
+<a href="/info">
+<button>
+Waitlist
+</button>
+</a>
+
+<a href="/report">
+<button>
+Report
+</button>
+</a>
+</center>
+</div>
